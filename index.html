@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calm and Composed Color Blog with Interactive UI</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+
+  <!-- Tailwind Config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            serene: {
+              50: '#f0f7f7',
+              100: '#d1e8e8',
+              200: '#a8d1d1',
+              300: '#7eb9b9',
+              400: '#5ba3a3',
+              500: '#498a8a',
+              600: '#3d7070',
+              700: '#335959',
+              800: '#2b4747',
+              900: '#233a3a',
+            },
+            calm: {
+              50: '#f6f8f5',
+              100: '#e5eae0',
+              200: '#c9d5be',
+              300: '#aabb9c',
+              400: '#90a47e',
+              500: '#768a65',
+              600: '#5f6f51',
+              700: '#4b5841',
+              800: '#3c4634',
+              900: '#31392b',
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- SEO + Social -->
+  <meta name="description" content="Explore a serene color blog featuring a cool UI, interactive elements, and hover effects. Discover inspiring content with images and descriptions." />
+  <meta property="og:title" content="Discover the Ultimate Calm Color Blog" />
+  <meta property="og:description" content="Dive into a serene and interactive color blog with a cool UI, hover effects, and inspiring content. Perfect for design enthusiasts." />
+  <meta name="twitter:title" content="🌈 Calm & Cool Color Blog Awaits!" />
+  <meta name="twitter:description" content="Explore a serene color blog with a sleek UI, hover effects, and inspiring visuals. Perfect for creative minds!" />
+
+  <!-- React & Babel -->
+  <script src="https://cdn.ezsite.ai/static/react.production.min.js"></script>
+  <script src="https://cdn.ezsite.ai/static/react-dom.production.min.js"></script>
+  <script src="https://cdn.ezsite.ai/static/babel.min.js"></script>
+  <script src="https://cdn.ezsite.ai/static/5.3.0/history.production.min.js"></script>
+  <script src="https://cdn.ezsite.ai/static/6.3.0/react-router.production.min.js"></script>
+  <script src="https://cdn.ezsite.ai/static/6.3.0/react-router-dom.production.min.js"></script>
+
+  <!-- Chatbot -->
+  <script project-code="cks7p0uh1drf" src="https://ezsite.ai/ezsite-api.js"></script>
+  <script src="https://ezsite.ai/ezsite-chatbot.js"></script>
+  <script project-code="cks7p0uh1drf" src="https://easysite.ai/ezsite-api.js"></script>
+  <script src="https://easysite.ai/ezsite-chatbot.js"></script>
+
+</head>
+<body class="bg-serene-50 text-gray-800 font-sans">
+  <div id="root"></div>
+
+  <!-- React Components -->
+  <script type="text/babel" src="/js/components/Header.js"></script>
+  <script type="text/babel" src="/js/components/Hero.js"></script>
+  <script type="text/babel" src="/js/components/WorkoutCard.js"></script>
+  <script type="text/babel" src="/js/components/Categories.js"></script>
+  <script type="text/babel" src="/js/components/About.js"></script>
+  <script type="text/babel" src="/js/components/Contact.js"></script>
+  <script type="text/babel" src="/js/components/Footer.js"></script>
+  <script type="text/babel" src="/js/app.js"></script>
+
+  <!-- Cookie Consent + Install Prompt -->
+  <!-- Cookie Consent Overlay -->
+<script type="text/babel">
+  const { useState, useEffect } = React;
+
+  function CookieOverlay() {
+    const [show, setShow] = useState(false);
+
+    useEffect(() => {
+      const accepted = localStorage.getItem('cookieAccepted');
+      if (!accepted) setShow(true);
+    }, []);
+
+    const handleAccept = () => {
+      localStorage.setItem('cookieAccepted', 'true');
+      setShow(false);
+      
+      // Trigger PWA install
+      if (window.deferredPrompt) {
+        window.deferredPrompt.prompt();
+        window.deferredPrompt.userChoice.then(choice => {
+          if (choice.outcome === 'accepted') {
+            console.log("✅ App installed");
+          } else {
+            console.log("❌ App install dismissed");
+          }
+        });
+      }
+    };
+
+    if (!show) return null;
+
+    return (
+      <div className="fixed inset-0 bg-black bg-opacity-70 z-[9999] flex items-center justify-center">
+        <div className="bg-white text-gray-900 p-6 rounded-lg shadow-2xl w-[90%] max-w-md text-center">
+          <h2 className="text-xl font-bold mb-4">🍪 Accept Cookies & Install App</h2>
+          <p className="mb-5 text-sm">
+            We use cookies to improve your experience. Accept to continue and install our PWA app.
+          </p>
+          <button
+            onClick={handleAccept}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition"
+          >
+            Accept & Install App
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // Handle deferred PWA install
+  window.deferredPrompt = null;
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    window.deferredPrompt = e;
+  });
+
+  const cookieRoot = document.createElement("div");
+  document.body.appendChild(cookieRoot);
+  ReactDOM.render(<CookieOverlay />, cookieRoot);
+</script>
+
+</body>
+</html>

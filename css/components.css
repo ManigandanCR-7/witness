@@ -1,0 +1,309 @@
+/* Header Styles */
+.header-shadow {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #5ba3a3;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hero section */
+.hero-bg {
+    background: linear-gradient(135deg, rgba(211, 233, 233, 0.8), rgba(201, 213, 190, 0.8));
+}
+
+/* Workout Card Styles */
+.blog-card {
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card-image {
+    height: 240px;
+    overflow: hidden;
+    position: relative;
+}
+
+.blog-card-image img {
+    transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-card-image img {
+    transform: scale(1.05);
+}
+
+.blog-card-content {
+    padding: 1.5rem;
+}
+
+.blog-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Featured Slider */
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.slide {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.slide-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 2rem 1.5rem;
+    transform: translateY(20%);
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.slide:hover .slide-overlay {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.slide-image {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.slide:hover .slide-image {
+    transform: scale(1.03);
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #d1e8e8;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+    background-color: #5ba3a3;
+    transform: scale(1.2);
+}
+
+/* Subscribe form */
+.subscribe-form {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.subscribe-input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 2px solid #e5eae0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.subscribe-input:focus {
+    outline: none;
+    border-color: #5ba3a3;
+    box-shadow: 0 0 0 3px rgba(91, 163, 163, 0.2);
+}
+
+.subscribe-button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    bottom: 5px;
+    padding: 0 1.5rem;
+    background: linear-gradient(90deg, #5ba3a3, #90a47e);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.subscribe-button:hover {
+    filter: brightness(1.1);
+}
+
+/* Footer styles */
+.footer-link {
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #5ba3a3;
+    transform: translateX(3px);
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f7f7;
+    color: #498a8a;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #5ba3a3;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Workout specific styles */
+.workout-difficulty {
+    display: flex;
+    align-items: center;
+}
+
+.difficulty-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 3px;
+}
+
+.difficulty-active {
+    background-color: #5ba3a3;
+}
+
+.difficulty-inactive {
+    background-color: #e2e8f0;
+}
+
+.reminder-btn {
+    position: relative;
+}
+
+.reminder-btn.active::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #EF4444;
+    top: -2px;
+    right: -2px;
+}
+
+.category-icon {
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover .category-icon {
+    transform: scale(1.2);
+}
+
+/* Timer styles */
+.timer-container {
+    background: linear-gradient(135deg, #5ba3a3, #90a47e);
+    border-radius: 15px;
+    padding: 1.5rem;
+    color: white;
+    box-shadow: 0 10px 25px rgba(91, 163, 163, 0.3);
+}
+
+.timer-display {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 1rem 0;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.timer-btn {
+    background-color: white;
+    color: #5ba3a3;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.timer-btn:hover {
+    background-color: #f0f7f7;
+    transform: translateY(-2px);
+}
+
+/* Custom underline effect */
+.custom-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-underline::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.custom-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Gradient text */
+.gradient-text {
+    background: linear-gradient(90deg, #5ba3a3, #768a65);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #5ba3a3;
+}
