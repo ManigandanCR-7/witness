@@ -1,6 +1,6 @@
 {
-    "name": "talk like pro",
-    "short_name": " professional guide platform",
+    "name": "witness app",
+    "short_name": " workout guide platform",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#000000",
